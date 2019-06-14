@@ -1,0 +1,33 @@
+@import 'inc/fonts.styl'
+
+@import 'plugins/wrd-reset.styl'
+@import 'plugins/wrd-ui.styl'
+@import 'plugins/wrd-atomic.styl'
+
+
+@import 'inc/header.styl'
+@import 'inc/footer.styl'
+
+
+@import '../components/*/*.styl'
+
+body
+  background-color #edf2f5
+
+.button
+  color #ffffff
+  font-family Circe
+  font-size 19px
+  font-weight 300
+  line-height 23px
+  border-radius 4px
+  height 46px
+  padding 0 40px
+  background 0
+  &--bg-red
+    background-color #d44e3d
+  &--border-red
+    border 2px solid #d44e3d
+
+
+@import 'adaptive/adaptive.styl'

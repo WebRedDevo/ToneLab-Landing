@@ -1,0 +1,60 @@
+.header
+  padding-top 20px
+  position absolute
+  top 0
+  z-index 9
+  &__logo
+    width 233px
+    height 90px
+    box-shadow 0 6px 20px 1px rgba(87, 87, 87, 0.25)
+    background-color #218555
+    padding 20px 30px
+    transform skewY(-4deg)
+    border-radius 2px
+    margin-right 45px
+    img
+      object-fit contain
+
+
+  &__nav
+    border-right 1px solid #fff
+    padding-right 40px
+    margin-right 29px
+    height 45px
+  &__list
+    &_item
+      &:not(:last-child)
+        margin-right 47px
+    &_link
+      color #fefefe
+      font-size 18px
+      font-weight 400
+      line-height 23px
+      &:after
+        background #fefefe
+
+
+  &__social_icon
+    .icon
+      height 25px
+      width 25px
+      fill #ffffff
+    &:not(:last-child)
+      margin-right 20px
+
+  &__telephone
+    color #ffffff
+    font-family Circe
+    font-size 21px
+    font-weight 400
+    line-height 23px
+    &:after
+      background #fefefe
+    &:not(:first-child)
+      margin-top 6px
+
+    .icon
+      width 15px
+      height 16px
+      fill #edf2f5
+      margin-right 8px
