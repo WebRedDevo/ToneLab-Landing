@@ -6,6 +6,7 @@ class ArticleProduct extends Component {
     const product = this.props
     let classProduct = "article-product"
     if(product.active) classProduct += " active"
+
     return(
       <article className={classProduct}>
         <h3 className="article-product__title">{product.title}</h3>
@@ -14,7 +15,10 @@ class ArticleProduct extends Component {
         <button className="button button--border-red">выбрать</button>
       </article>
     )
+
   }
+
+
 }
 
 

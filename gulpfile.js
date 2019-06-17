@@ -33,8 +33,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const processors = [
 autoprefixer(),
 postcssPresetEnv(),
-focus(), 
-pxtorem(), 
+focus(),
+pxtorem(),
 ];
 
 const cssmin = [
@@ -65,7 +65,7 @@ let webpackConfig = {
 		// new BundleAnalyzerPlugin()
 	],
 	 resolve: {
-	    extensions: ['.js', '.jsx'],
+	    extensions: ['.js', '.jsx', '.json'],
 	 },
 
 	mode: isProd ?  'production' : 'development'
@@ -81,7 +81,7 @@ gulp.task('webpack', function() {
 });
 
 // Clean
-gulp.task('clean', function () { 
+gulp.task('clean', function () {
 return gulp.src('public', {read: false})
 .pipe(clean());
 });
@@ -96,7 +96,7 @@ gulp.task('pug', function() {
 	.pipe(pug({
 		pretty:true
 	}))
-	.pipe(gulpif(!isProd, htmlmin({ 
+	.pipe(gulpif(!isProd, htmlmin({
 		collapseWhitespace: true,
 		removeComments: true
 	})))
@@ -117,7 +117,7 @@ gulp.task('stylus', function(){
 	.pipe(csscomb())
 	.pipe(postcss(processors))
 	// .pipe(sourcemaps.write('.'))
-	
+
 	.pipe(gulpif(isProd,postcss(cssmin)))
 	.pipe(gulpif(isProd,rename({
 		suffix: ".min"
@@ -195,7 +195,7 @@ gulp.watch(['frontend/pug/*.pug','frontend/pug/**/*.pug'],gulp.series('pug'))
 gulp.watch(['frontend/js/*.js','frontend/js/inc/*.js'],gulp.series('webpack'))
 gulp.watch(['frontend/components/*.js','frontend/components/*.jsx','frontend/components/*/*.jsx'],gulp.series('webpack'))
 });
- 
+
 gulp.task('browser-sync', function() {
 browserSync.init({
 server: {
@@ -206,14 +206,11 @@ browserSync.watch('public',browserSync.reload)
 });
 
 
-// ПЕРВИЧНАЯ СБОРКА 
+// ПЕРВИЧНАЯ СБОРКА
 gulp.task('build:dev',gulp.series(
 gulp.parallel('webpack', 'fonts:build','images:build','svg:build')));
 
-// ЛОКАЛЬНАЯ СБОРКА 
+// ЛОКАЛЬНАЯ СБОРКА
 gulp.task('dev', gulp.series('clean', gulp.parallel('build:dev', 'pug','stylus'),
 gulp.parallel('watch','browser-sync')
 ));
-
-
-

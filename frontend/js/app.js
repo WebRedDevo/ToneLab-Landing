@@ -11,6 +11,7 @@ render(<App/>, document.getElementById('root'))
 
 const header__socialIcons = document.querySelector('.header__social-icons');
 const header__telephone = document.querySelectorAll('.header__telephone');
+const slider_button = document.querySelectorAll('.initial-screen__slider_button');
 let masSocialIcon = []
 
 masSocialIcon.push({
@@ -50,6 +51,13 @@ for(let i = 0, max = header__telephone.length; i < max; i++){
   },   header__telephone[i])
 
 }
+for(let i = 0, max = slider_button.length; i < max; i++){
+  insertSVG({
+    position: 'left',
+    svg:'<svg class="icon icon-arrow-next"><use xlink:href="#icon-arrow-next"></use></svg>'
+  },   slider_button[i])
+
+}
 
 function insertSVG(item, root) {
   const a = document.createElement('a');
@@ -65,5 +73,43 @@ function insertSVG(item, root) {
 
 }
 
+
+
+(function slider(){
+  const root = document;
+  const selectSlider = root.querySelector('.section--select__slider');
+  const selectSliderWrap = root.querySelector('.section--select__slider_wrap');
+
+
+  let selectSliderRight = selectSlider.getBoundingClientRect().right;
+  let selectSliderWrapRight = selectSliderWrap.getBoundingClientRect().right;
+  const dif = selectSliderWrapRight - selectSliderRight;
+
+
+  selectSliderWrap.style.transform = "translateX( -241px)"
+
+}())
+
+
+const button = document.getElementsByClassName('initial-screen__tonirovka_button')[0];
+
+button.addEventListener("mousedown", function handleLineTint(e){
+  const bg = document.getElementsByClassName('initial-screen__tonirovka_bg')[0];
+
+  let startY = e.clientY;
+
+  document.mousemove = bgMove
+  document.mouseup = () => {
+    console.log('muose up')
+    document.mousemove = null;
+  }
+
+  function bgMove(e){
+    let dif = startY - e.clientY;
+    let heightBg = bg.offsetHeight + dif ;
+    console.log("heightBg")
+    bg.style.height = heightBg + "px"
+  }
+})
 
 svgSprite(window, document);

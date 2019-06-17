@@ -20,7 +20,7 @@ class SectionMaterials extends Component {
             <img src="images/suncontrol-logo.png" alt="" className="section--materials__list_logo"/>
           </li>
           <li className="section--materials__list_item">
-            <img src="images/ultravision-logo.png" alt="" className="section--materials__list_logo"/>
+            <img src="images/kylon-logo.png" alt="" className="section--materials__list_logo"/>
           </li>
         </ul>
 

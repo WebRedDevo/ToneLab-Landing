@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ArticleProduct from '../ArticleProduct'
+import data from '../../data/select-tint'
 
 class SectionSelect extends Component {
   constructor(props){
@@ -10,6 +11,7 @@ class SectionSelect extends Component {
   }
 
   render(){
+    console.log(data)
     return(
       <section className="section--select container flex a-i__c j-c__s-b">
         <div className="section--select__slider ">

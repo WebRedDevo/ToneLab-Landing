@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
 
 class InitialScreen extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      isOpen:true
-    }
-  }
 
   render(){
     return(
       <section className="initial-screen">
-        <div class="initial-screen__tonirovka"></div>
+        <div class="initial-screen__tonirovka">
+          <div class="initial-screen__tonirovka_line">
+            <button class="initial-screen__tonirovka_button"></button>
+          </div>
+          <div class="initial-screen__tonirovka_bg"></div>
+        </div>
+        <p class="initial-screen__tonirovka-text">
+          <span>До тонировки</span>
+        </p>
 
         <div className="initial-screen__slide">
           <img className="initial-screen__slide_image" src="images/initial-screen-bg.jpg" alt="" />
@@ -24,16 +26,30 @@ class InitialScreen extends Component {
                 <button className="button button--border-red">заказать звонок</button>
               </div>
           </div>
+
+
+          <div class="initial-screen__slider_control container max-w__1280 pd-80">
+            <div className="initial-screen__slider_buttons flex">
+              <button className="initial-screen__slider_button button--prev flex j-c__c a-i__c"></button>
+              <button className="initial-screen__slider_button button--next flex j-c__c a-i__c"></button>
+            </div>
+
+            <div class="initial-screen__slider-switches flex j-c__s-b">
+              <button class="initial-screen__slider-switches_button active"><span>01</span></button>
+              <button class="initial-screen__slider-switches_button"><span>02</span></button>
+              <button class="initial-screen__slider-switches_button"><span>03</span></button>
+              <button class="initial-screen__slider-switches_button"><span>04</span></button>
+            </div>
+          </div>
+
         </div>
 
-        <div className="initial-screen__slider_buttons">
-          <button className="initial-screen__slider_button button--prev"></button>
-          <button className="initial-screen__slider_button button--next"></button>
-        </div>
 
       </section>
     )
   }
+
+
 }
 
 
