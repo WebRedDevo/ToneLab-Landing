@@ -13,7 +13,8 @@
 
 body
   background-color #edf2f5
-
+  &::-webkit-scrollbar
+    width 0
 .button
   color #ffffff
   font-family Circe
@@ -21,13 +22,45 @@ body
   font-weight 300
   line-height 23px
   border-radius 4px
+  transition .33s
   height 46px
   padding 0 40px
   background 0
+  overflow hidden
+  position relative
+  span
+    position relative
+
+  &:before
+    content ''
+    width 20px
+    height 20px
+    background #d44e3d
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    opacity 0
+    margin auto
+    border-radius 50%
+    z-index 0
+    transition .38s
+  &:hover
+    box-shadow 0px 21px 44px rgba(0,0,0, .15)
+    &:before
+      transform scale(14)
+      opacity 1
   &--bg-red
     background-color #d44e3d
+    &:hover
+      color #d44e3d
+      &:before
+        background #ffffff
   &--border-red
     border 2px solid #d44e3d
+    &:hover
+      color #fff
 
 
 @import 'adaptive/adaptive.styl'

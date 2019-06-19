@@ -12,31 +12,37 @@ render(<App/>, document.getElementById('root'))
 const header__socialIcons = document.querySelector('.header__social-icons');
 const header__telephone = document.querySelectorAll('.header__telephone');
 const slider_button = document.querySelectorAll('.initial-screen__slider_button');
+const sliderMaterial_button = document.querySelectorAll('.section--select__slider_button');
 let masSocialIcon = []
 
 masSocialIcon.push({
-  href:'#',
+  href:'https://vk.com/tonelab',
   class:'header__social_icon',
+  target:'_blank',
   svg:'<svg class="icon icon-icon-vk"><use xlink:href="#icon-icon-vk"></use></svg>'
 })
 masSocialIcon.push({
   href:'#',
   class:'header__social_icon',
+  target:'_blank',
   svg:'<svg class="icon icon-icon-instagram"><use xlink:href="#icon-icon-instagram"></use></svg>'
 })
 masSocialIcon.push({
   href:'#',
   class:'header__social_icon',
+  target:'_blank',
   svg:'<svg class="icon icon-icon-youtube"><use xlink:href="#icon-icon-youtube"></use></svg>'
 })
 masSocialIcon.push({
   href:'#',
   class:'header__social_icon',
+  target:'_blank',
   svg:'<svg class="icon icon-icon-odnoklassniki"><use xlink:href="#icon-icon-odnoklassniki"></use></svg>'
 })
 masSocialIcon.push({
   href:'#',
   class:'header__social_icon',
+  target:'_blank',
   svg:'<svg class="icon icon-icon-share"><use xlink:href="#icon-icon-share"></use></svg>'
 })
 
@@ -58,11 +64,19 @@ for(let i = 0, max = slider_button.length; i < max; i++){
   },   slider_button[i])
 
 }
+for(let i = 0, max = sliderMaterial_button.length; i < max; i++){
+  insertSVG({
+    position: 'left',
+    svg:'<svg class="icon icon-arrow-next"><use xlink:href="#icon-arrow-next"></use></svg>'
+  },   sliderMaterial_button[i])
+
+}
 
 function insertSVG(item, root) {
   const a = document.createElement('a');
   if(item.class) a.className = item.class;
   if(item.href) a.href=item.href
+  if(item.target) a.target=item.target
   a.innerHTML = item.svg;
   if(item.position === 'left') {
     root.prepend(a);

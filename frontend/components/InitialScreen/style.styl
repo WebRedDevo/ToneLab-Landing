@@ -26,6 +26,31 @@
       height 10px
       background #fff
       border-radius 50%
+      &:before
+        content ''
+        background-image url('../images/slider-arrow.png')
+        background-size cover
+        width 15px
+        transform rotate(180deg)
+        height 9px
+        position absolute
+        bottom 10px
+        left 0
+        right 0
+        margin auto
+      &:after
+        content ''
+        background-image url('../images/slider-arrow.png')
+        background-size cover
+        width 15px
+        height 9px
+        position absolute
+        top 10px
+        left 0
+        right 0
+        margin auto
+
+
     &-text
       position absolute
       top 0
@@ -161,6 +186,7 @@
           &.active
             color #c06d6d
             &:after
+              background-color #c06d6d
               height 3px
           &:after
             background-color #218555

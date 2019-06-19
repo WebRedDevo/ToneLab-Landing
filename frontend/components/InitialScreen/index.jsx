@@ -22,8 +22,8 @@ class InitialScreen extends Component {
               <h2 className="initial-screen__slide_title">Каждый понедельник скидка</h2>
               <p className="initial-screen__slide_discription">Разнообразный и богатый опыт постоянное информационно-пропагандистское </p>
               <div className="initial-screen__slide_buttons flex">
-                <button className="button button--bg-red">оставить заявку</button>
-                <button className="button button--border-red">заказать звонок</button>
+                <button className="button button--bg-red"><span>оставить заявку</span></button>
+                <button className="button button--border-red"><span>заказать звонок</span></button>
               </div>
           </div>
 

@@ -27,4 +27,21 @@
     &_wrap
       width max-content
       height 450px
-      
+    &_control
+      margin-top 50px
+    &_button
+      background 0
+      padding 5px 10px
+      border 1px solid transparent
+      transition .33s
+      &:hover
+        border 1px solid #4a4a4a
+      &.button--prev
+        margin-right 15px
+        .icon
+          transform rotate(180deg)
+
+      .icon
+        width 34px
+        height 27px
+        fill #4a4a4a

@@ -36,8 +36,8 @@ class Header extends Component {
           <div className="header__social-icons flex a-i__c" ></div>
         </div>
         <div class="header__telephones flex f-d__c j-c__f-e">
-          <a class="header__telephone b-line" href="#">926-37-53</a>
-          <a class="header__telephone b-line" href="#">985-71-62</a>
+          <a class="header__telephone b-line" href="tel:926-37-53">926-37-53</a>
+          <a class="header__telephone b-line" href="tel:985-71-62">985-71-62</a>
         </div>
       </header>
     )
